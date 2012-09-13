@@ -5,11 +5,11 @@ env = ENV["RAILS_ENV"] || "development"
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete documentation.
 worker_processes 2
 
-shared_path = "/home/deploy/apps/push_dialer/shared"
+shared_path = "/var/www/remote_dialer/shared"
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "#{shared_path}/tmp/sockets/push_dialer.sock", :backlog => 64
+listen "/tmp/remote_dialer.sock", :backlog => 64
 
 # Preload our app for more speed
 preload_app true
@@ -23,11 +23,11 @@ pid "#{shared_path}/pids/unicorn.pid" #"/tmp/unicorn.push_dialer.pid"
 if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  working_directory "/home/deploy/apps/push_dialer/current"
+  working_directory "/var/www/remote_dialer/current"
 
   # feel free to point this anywhere accessible on the filesystem
   user 'deploy', 'staff'
-  shared_path = "/home/deploy/apps/push_dialer/shared"
+  shared_path = "/var/www/remote_dialer/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"

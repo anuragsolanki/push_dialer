@@ -2,14 +2,14 @@ require "bundler/capistrano"
 require "whenever/capistrano"
 
 set :scm,             :git
-set :repository,      "git@github.com:ShubhamGupta/push_dialer.git"
+set :repository,      "git@github.com:anuragsolanki/push_dialer.git" #"git@github.com:ShubhamGupta/push_dialer.git"
 set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
 set :rails_env,       "production"
-set :deploy_to,       "/home/deploy/apps/push_dialer"
+set :deploy_to,       "/var/www/push_dialer"
 set :normalize_asset_timestamps, false
-set :deploy_via, :remote_cache
+# set :deploy_via, :remote_cache
 set :keep_releases,   5
 
 default_run_options[:pty] = true

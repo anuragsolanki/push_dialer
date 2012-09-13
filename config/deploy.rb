@@ -7,7 +7,7 @@ set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
 set :rails_env,       "production"
-set :deploy_to,       "/var/www/push_dialer"
+set :deploy_to,       "/var/www/remote_dialer"
 set :normalize_asset_timestamps, false
 # set :deploy_via, :remote_cache
 set :keep_releases,   5

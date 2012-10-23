@@ -21,6 +21,8 @@
 
 env :MAILTO, 'anurag@vinsol.com'
 
+env :PATH, ENV['PATH']
+
 every :monday, :at => '1am' do
   rake "apn:feedback:process"
 end

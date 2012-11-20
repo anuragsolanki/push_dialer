@@ -27,6 +27,10 @@ every :monday, :at => '1am' do
   rake "apn:feedback:process"
 end
 
+every :monday, :at => '1:10 am' do
+  rake "remove_abandoned_machines"
+end
+
 every :tuesday, :at => '3pm' do
   rake "custom_reminder"
 end

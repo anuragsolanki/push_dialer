@@ -18,7 +18,6 @@ module PushDialer
     helpers do
       # see https://github.com/intridea/grape/wiki/Accessing-parameters-and-headers
       def authenticate!
-      
         error!('401 Unauthorized', 401) unless env['HTTP_AUTHORIZATION'] == "HUMPTyVIN-SOlPUsH-DIaLERdUMPTY"
       end
     end

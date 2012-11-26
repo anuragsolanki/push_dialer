@@ -17,7 +17,8 @@ group :assets do
 end
 
 gem 'mysql2'
-gem 'apn_on_rails', '>= 0.5'  #:git => 'https://github.com/natescherer/apn_on_rails.git', :branch => 'rails3'  
+# gem 'apn_on_rails', '>= 0.5'  #:git => 'https://github.com/natescherer/apn_on_rails.git', :branch => 'rails3'
+gem 'apn_on_rails', :git => 'https://github.com/anuragsolanki/apn_on_rails.git'
 gem 'jquery-rails'
 gem 'grape'
 gem 'httparty'
